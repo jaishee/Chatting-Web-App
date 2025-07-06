@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.reg-image{
+    width: 100%;
+    height: 100vh;
+    display: block;
+    object-fit: cover;
+    background-color: #7ABA78;
+}
+
+.reg-content-box{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 100%;
+}
+
+.reg-content{
+    padding-right: 30px;
+    width: 500px;
+
+}
+.reg-content h2{
+    font-size: 32px;
+    font-weight: 700;
+    color: #11175D;
+    font-family: "Nunito", sans-serif;
+}
+
+.reg-content p{
+    font-size: 20px;
+    font-weight: 400;
+    color: #808080;
+    font-family: "Nunito", sans-serif;
+    padding-top: 13px;
+    padding-bottom: 39px;
+}
+
+.reg-content p:last-child{
+    font-size: 13px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    color: #03014C;
+    padding-top: 35px;
+    margin-left: 48px;
+    
+}
+.reg-content p:last-child span{
+    color: #EA6C00;
+    
+}
