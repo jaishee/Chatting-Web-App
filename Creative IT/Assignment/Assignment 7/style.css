@@ -1,0 +1,271 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main{
+    width: 1280px;
+    height: 800px;
+    background-color: #dad8d8;
+    display: flex;
+    flex-wrap: wrap;
+}
+.one{
+    width: 1280px;
+    height: 250px;
+    column-gap: 20px;
+    display: flex;
+    
+}
+
+.bangladesh{
+    margin: 10px;
+    width: 350px;
+    height: 250px;
+    background: green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
+
+}
+.circle{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.bangladesh:hover{
+    margin: 10px;
+    width: 350px;
+    height: 250px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.belgium{
+    margin: 10px;
+    width: 350px;
+    height: 250px;
+    display: flex;
+}
+.bel1{
+    width: 33%;
+    background-color: black; 
+    transition: .5s;
+}
+.bel2{
+    width: 34%;
+    background-color: yellow;
+    transition: .5s;
+}
+.bel3{
+    width: 33%;
+    background-color: red;
+    transition: .5s; 
+}
+.belgium:hover .bel1{
+    width: 33%;
+    background-color: darkblue; 
+}
+.belgium:hover .bel2{
+    width: 34%;
+    background-color: white; 
+}
+.argentina{
+    margin: 10px;
+    width: 350px;
+    height: 250px;
+}
+.arg1{
+    height: 33%;
+    background-color: skyblue; 
+    transition: .5s;
+}
+.argentina:hover .arg1{
+    height: 33%;
+    background-color: red; 
+}
+.arg2{
+    height: 34%;
+    background-color: white;
+}
+.arg3{
+    height: 33%;
+    background-color: skyblue; 
+}
+.monaco{
+    margin: 10px;
+    width: 350px;
+    height: 250px;
+}
+.mon1{
+    height: 50%;
+    background-color: red;
+    transition: .5s; 
+}
+.mon2{
+    height: 50%;
+    background-color: white;
+    transition: .5s;
+}
+.monaco:hover .mon1{
+    height: 50%;
+    background-color: white; 
+}
+.monaco:hover .mon2{
+    height: 50%;
+    background-color: red;
+}
+.two{
+    width: 1280px;
+    height: 250px;
+    column-gap: 20px;
+    display: flex;
+}
+.thailand{
+    margin: 10px;
+    width: 350px;
+    height: 250px;
+}
+.thai1{
+    height: 15%;
+    background-color: red; 
+    transition: .5s;
+}
+.thai2{
+    height: 15%;
+    background-color: white;
+}
+.thai3{
+    height: 40%;
+    background-color: darkblue; 
+    transition: .5s;
+}
+.thai4{
+    height: 15%;
+    background-color: white; 
+}
+.thai5{
+    height: 15%;
+    background-color: red;
+    transition: .5s;
+}
+.thailand:hover .thai1{
+    height: 15%;
+    background-color: darkblue
+}
+.thailand:hover .thai3{
+    height: 40%;
+    background-color: red; 
+}
+.thailand:hover .thai5{
+    height: 15%;
+    background-color: darkblue; 
+}
+.netherland{
+    margin: 10px;
+    width: 350px;
+    height: 250px;
+}
+.net1{
+    height: 33%;
+    background-color: red; 
+    transition: .5s;
+}
+.net2{
+    height: 34%;
+    background-color: white;
+    transition: .5s;
+}
+.net3{
+    height: 33%;
+    background-color: darkblue; 
+    transition: .5s;
+}
+.netherland:hover .net1{
+    height: 33%;
+    background-color: white; 
+}
+.netherland:hover .net2{
+    height: 34%;
+    background-color: darkblue;
+}
+.netherland:hover .net3{
+    height: 33%;
+    background-color: red; 
+}
+.guinia{
+    margin: 10px;
+    width: 350px;
+    height: 250px;
+    display: flex;
+}
+.gui1{
+    width: 33%;
+    background-color: red; 
+    transition: .5s;
+}
+.gui2{
+    width: 34%;
+    background-color: yellow;
+    transition: .5s;
+}
+.gui3{
+    width: 33%;
+    background-color: green; 
+}
+.guinia:hover .gui1{
+    width: 33%;
+    background-color: green; 
+}
+.guinia:hover .gui3{
+    width: 33%;
+    background-color: red; 
+}
+.benin{
+    margin: 10px;
+    width: 350px;
+    height: 250px;
+    display: flex;
+}
+.ben1{
+    width: 40%;
+    background-color: green;
+    transition: .5s;
+}
+.ben2{
+    width: 60%;
+    transition: .5s;
+}
+.ben3{
+    width: 100%;
+    height: 125px;
+    background-color: yellow;
+    transition: .5s;
+}
+.ben4{
+    width: 100%;
+    height: 125px;
+    background-color: red;
+    transition: .5s;
+}
+.benin:hover .ben1{
+    width: 30%;
+    background-color: white;
+}
+.benin:hover .ben2{
+    width: 70%;
+}
+.benin:hover .ben3{
+    width: 100%;
+    height: 125px;
+    background-color: red;
+}
+.benin:hover .ben4{
+    width: 100%;
+    height: 125px;
+    background-color: green;
+}

@@ -1,0 +1,283 @@
+.main{
+    width: 800px;
+    height: 400px;
+    background: gray;
+}
+
+.one{
+    width: 800px;
+    height: 100px;
+    background: rgb(231, 229, 118);
+}
+.two{
+    width: 800px;
+    height: 100px;
+    background: rgb(167, 243, 68);
+    display: flex;
+}
+.three{
+    width: 800px;
+    height: 100px;
+    background: #16a82a;
+    display: flex;
+}
+.four{
+    width: 800px;
+    height: 100px;
+    background: #086308;
+    display: flex;
+}
+.one2{
+    width: 400px;
+}
+.two2{
+    width: 100px;
+    height: 100px;
+    background: red;
+}
+.three2{
+    width: 100px;
+    height: 100px;
+    background: blue;
+}
+.four2{
+    width: 100px;
+    height: 100px;
+    background: black;
+}
+.five2{
+    width: 100px;
+    height: 100px;
+    background: gray;
+}
+.one3{
+    width: 200px;
+    height: 60px;
+    background: blue;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    margin-left: 40px;
+}
+.one4{
+    width: 350px;
+    background: yellow;
+}
+.two4{
+    width: 350px;
+    background: red;
+}
+.three4{
+    width: 100px;
+    background: blue;
+}
+.one4one{
+    width: 350px;
+    height: 50px;
+    background: violet;
+}
+.one4two{
+    width: 350px;
+    height: 50px;
+    display: flex;
+}
+.one4two1{
+    width: 175px;
+    background: black;
+    
+}
+.one4two2{
+    width: 87px;
+    background: blue;
+    
+}
+.one4two3{
+    width: 88px;
+    background: pink;
+    
+}
+.one4two3one{
+    width: 88px;
+    height: 25px;
+    background: black;
+    display: flex;
+}
+.one4two3two{
+    width: 88px;
+    height: 25px;
+    background: orangered;
+    display: flex;
+
+}
+.one4two3one1{
+    width: 22px;
+    background: black;
+    display: flex;
+}
+.one4two3one2{
+    width: 22px;
+    background: white;
+}
+.one4two3one3{
+    width: 22px;
+    background: black;
+}
+.one4two3one4{
+    width: 22px;
+    background: white;
+}
+.one4two3two1{
+    width: 44px;
+}
+.one4two3two2{
+    width: 22px;
+    background: white;
+}
+.one4two3two3{
+    width: 11px;
+    background: black;
+}
+.one4two3two4{
+    width: 11px;
+    background: black;
+}
+.one4two3two1one{
+    height: 50%;
+}
+.one4two3two1two{
+    height: 50%;
+    background: black;
+    display: flex;
+}
+.one4two3two1two1{
+    width: 11px;
+    background: #e4dede;
+}
+.one4two3two1two2{
+    width: 11px;
+    background: black;
+}
+.one4two3two1two3{
+    width: 11px;
+    background: #e4dede;
+}
+.one4two3two1two4{
+    width: 11px;
+    background-color: black;
+}
+.one4two3two3one{
+   width: 11px;
+   height: 8px;
+   background: black; 
+}
+.one4two3two3two{
+    width: 11px;
+    height: 8px;
+    background: #e63b3b; 
+ }
+ .one4two3two3three{
+    width: 11px;
+    height: 9px;
+    background: yellow; 
+ }
+ .one4two3two4one{
+    width: 11px;
+    height: 8px;
+    background: #e63b3b; 
+ }
+ .one4two3two4two{
+     width: 11px;
+     height: 8px;
+     background: yellow; 
+  }
+  .one4two3two4three{
+     width: 11px;
+     height: 9px;
+     background: black; 
+  }
+.three4one{
+    width: 100px;
+    height: 16px;
+    background: blue;
+}
+.three4two{
+    width: 100px;
+    height: 17px;
+    background: white;
+}
+.three4three{
+    width: 100px;
+    height: 17px;
+    background: black;
+}
+.three4four{
+    width: 100px;
+    height: 17px;
+    background: blue;
+}
+.three4five{
+    width: 100px;
+    height: 17px;
+    background: white;
+    display: flex;
+}
+.three4six{
+    width: 100px;
+    height: 16px;
+    background: black;
+}
+.d1{
+    width: 42px;
+    background: white;
+}
+.d2{
+    width: 14px;
+    background: orangered;
+}
+.d3{
+    width: 15px;
+    background: white;
+}
+.d4{
+    width: 14px;
+    background: orangered;
+}
+.d5{
+    width: 15px;
+    background: white;
+}
+.d6{
+    width: 14px;
+    background: orangered;
+}
+.dd1{
+    height: 50%;
+    display: flex;
+}
+.dd2{
+    height: 50%;
+    display: flex;
+}
+.ddd1{
+    width: 14px;
+    background: orangered;
+}
+.ddd2{
+    width: 14px;
+    background: white;
+}
+.ddd3{
+    width: 14px;
+    background: orangered;
+}
+.ddd4{
+    width: 14px;
+    background: orchid;
+}
+.ddd5{
+    width: 14px;
+    background: yellow;
+}
+.ddd6{
+    width: 14px;
+    background: orchid;
+}

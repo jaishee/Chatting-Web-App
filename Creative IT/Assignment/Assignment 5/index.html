@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Advertisement</title>
+</head>
+<body>
+    <!-- Header Section -->
+    <h1>Admissions Open for Master's Program 2024</h1>
+    <p><strong>Join a world-class institution to pursue your dreams!</strong></p>
+    <img src="image.jpeg" alt="Admissions Banner" width="100%">
+
+    <!-- Advertisement Details -->
+    <p><strong>Why Choose Us?</strong></p>
+    <ul>
+        <li>Highly qualified faculty and state-of-the-art infrastructure.</li>
+        <li>Industry-relevant curriculum designed for the modern era.</li>
+        <li>Placement assistance with leading companies worldwide.</li>
+        <li>Scholarships available for meritorious students.</li>
+    </ul>
+
+    <!-- Call to Action -->
+    <p><strong>Apply now to secure your seat!</strong></p>
+    <button onclick="window.location.href='#application-form'">Start Application</button>
+
+    <!-- Application Form Section -->
+    <h2 id="application-form">Master's Admission Form</h2>
+    <p>Fill out the form below to apply for our Master's program.</p>
+    <form>
+        <!-- Personal Details -->
+        <h3>Personal Information</h3>
+        <p>
+            <label for="fullname">Full Name:</label><br>
+            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+        </p>
+        <p>
+            <label for="dob">Date of Birth:</label><br>
+            <input type="date" id="dob" name="dob" required>
+        </p>
+        <p>
+            <label>Gender:</label><br>
+            <input type="radio" id="male" name="gender" value="male" required> Male<br>
+            <input type="radio" id="female" name="gender" value="female"> Female<br>
+            <input type="radio" id="other" name="gender" value="other"> Other
+        </p>
+
+        <!-- Contact Information -->
+        <h3>Contact Information</h3>
+        <p>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </p>
+        <p>
+            <label for="phone">Phone Number:</label><br>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+        </p>
+
+        <!-- Education Details -->
+        <h3>Educational Background</h3>
+        <p>
+            <label for="qualification">Highest Qualification:</label><br>
+            <select id="qualification" name="qualification" required>
+                <option value="">Select qualification</option>
+                <option value="bachelor">Bachelor's Degree</option>
+                <option value="postgraduate">Postgraduate Diploma</option>
+            </select>
+        </p>
+        <p>
+            <label>Preferred Field of Study:</label><br>
+            <input type="checkbox" id="cs" name="field" value="cs"> Computer Science<br>
+            <input type="checkbox" id="business" name="field" value="business"> Business Administration<br>
+            <input type="checkbox" id="engineering" name="field" value="engineering"> Engineering<br>
+            <input type="checkbox" id="humanities" name="field" value="humanities"> Humanities
+        </p>
+
+        <!-- Budget Section -->
+        <h3>Expected Tuition Fee Budget (in BDT)</h3>
+        <p>
+            <label for="budget">Select your budget:</label><br>
+            <input type="range" id="budget" name="budget" min="50000" max="500000" step="25000" oninput="displayBudget.value = budget.value">
+            <br>Selected Budget: <strong><output id="displayBudget">275000</output></strong> BDT
+        </p>
+
+        <!-- Agreement -->
+        <p>
+            <input type="checkbox" id="agreement" name="agreement" required> 
+            <label for="agreement">I agree to the terms and conditions</label>
+        </p>
+
+        <!-- Submit Button -->
+        <p>
+            <button type="submit">Submit Application</button>
+        </p>
+    </form>
+</body>
+</html>

@@ -1,0 +1,24 @@
+.allPost{
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.error{
+    margin-top: 20px;
+    margin-bottom: 0;
+    color: red;
+}
+.nameError{
+    color: red;
+}
+.captionError{
+    color: red;
+}
+.formOne{
+    padding: 20px;
+    background-color: rgb(233, 214, 189);
+    justify-content: center;
+    width: 400px;
+}
+.heading{
+    text-align: center;
+}
