@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
 }
+
+/*Registration Page Design End*/
 .reg-image{
     width: 100%;
     height: 100vh;
@@ -9,14 +11,12 @@
     object-fit: cover;
     background-color: #7ABA78;
 }
-
 .reg-content-box{
     display: flex;
     justify-content: end;
     align-items: center;
     height: 100%;
 }
-
 .reg-content{
     padding-right: 30px;
     width: 500px;
@@ -28,8 +28,7 @@
     color: #11175D;
     font-family: "Nunito", sans-serif;
 }
-
-.reg-content p{
+.paragraph{
     font-size: 20px;
     font-weight: 400;
     color: #808080;
@@ -45,9 +44,65 @@
     color: #03014C;
     padding-top: 35px;
     margin-left: 48px;
-    
 }
-.reg-content p:last-child span{
-    color: #EA6C00;
-    
+
+.reg-content p:last-child a{
+  text-decoration: none;
+  color: #EA6C00;
 }
+
+.regEyeIcon{
+    position: absolute;
+    top: 19px;
+    left: 270px;
+}
+.regPasswordField{
+    position: relative;
+}
+.errorMessage{
+    color: red;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: "Nunito", sans-serif;
+    padding-bottom: 5px;
+}
+
+/*Registration Page Design End*/
+
+/*Login Page Design Start*/
+
+.log-image{
+    width: 100%;
+    height: 100vh;
+    display: block;
+    object-fit: cover;
+    background-color: #7ABA78;
+}
+.loginType{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 422px;
+    height: 70px;
+    margin-top: 35px;
+    column-gap: 10px;
+    border: 1px solid #5F34F5;
+    border-radius: 9px;
+}
+.loginType p{
+    margin-left: 0px !important;
+    padding: 0px !important;
+    font-size: 21px !important;
+    color: #03014C !important;
+    font-family: "Open Sans", sans-serif !important;
+    font-weight: 600 !important;
+}
+.logEyeIcon{
+    position: absolute;
+    top: 19px;
+    left: 390px;
+}
+.logPasswordField{
+    position: relative;
+}
+/*Login Page Design End*/
