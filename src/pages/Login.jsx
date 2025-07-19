@@ -36,17 +36,59 @@ const CssButton = styled(Button)({
 });
 const Login = () => {
   let [showPassword,setShowPassword]=useState(false)
+  let [email,setEmail]=useState("")
+    let [password,setPassword]=useState("")
+    let [emailError,setEmailError]=useState("")
+    let [passwordError,setPasswordError]=useState("")
   
+    let handleEmail=(e)=>{
+      setEmail(e.target.value)
+      setEmailError("")
+    }
+    let handlePassword=(password)=>{
+      setPassword(password.target.value)
+      setPasswordError("")
+    }
+    let handleSignIn=()=>{
+      if(!email){
+        setEmailError("* Email is required")
+      }else{
+        if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
+          setEmailError("Enter a valid email")
+        }
+      }
+      if(!password){
+        setPasswordError("* Password is required")
+      }else if(!/(?=.*[a-z])/.test(password)){
+        setPasswordError("Ensures at least one lowercase letter")
+      }else if(!/(?=.*[A-Z])/.test(password)){
+        setPasswordError("Ensures at least one uppercase letter")
+      }else if(!/(?=.*\d)/.test(password)){
+        setPasswordError("Ensures at least one digit")
+      }else if(!/(?=.*[@$!%*?&])/.test(password)){
+        setPasswordError("Ensures at least one special character")
+      }else if(!/([A-Za-z\d@$!%*?&]{8,}$)/.test(password)){
+        setPasswordError("Ensures the password is at least 8 characters long")
+      } 
+      
+    }
+
   return (
     <Grid container>
         <Grid size={6}>
           <div className='reg-content-box'>
             <div className='reg-content'>
             <h2>Login to your account!</h2>
-            <p>Free register and you can enjoy it</p>
-            <CssTextField id="outlined-basic" label="Email Address" variant="outlined" />
+            <p className='paragraph'>Free register and you can enjoy it</p>
+            {
+              emailError && <p className='errorMessage'>{emailError}</p>
+            }
+            <CssTextField onChange={handleEmail} id="outlined-basic" label="Email Address" variant="outlined" />
+            {
+              passwordError && <p className='errorMessage'>{passwordError}</p>
+            }
             <div className='logPasswordField'>
-              <CssTextField type={showPassword?"text":"password"} id="outlined-basic" label="Password" variant="outlined" />
+              <CssTextField onChange={handlePassword} type={showPassword?"text":"password"} id="outlined-basic" label="Password" variant="outlined" />
               <div onClick={()=>setShowPassword(!showPassword)} className='logEyeIcon'>
                 {
                   showPassword 
@@ -57,12 +99,12 @@ const Login = () => {
                 } 
               </div>
             </div>
-            <CssButton variant="contained">Login to Continue</CssButton>
+            <CssButton  onClick={handleSignIn} variant="contained">Login to Continue</CssButton>
             <div className='loginType'>
               <img src={GoogleImg} alt="" />
               <p>Login with Google</p>
             </div>
-            <p>Don’t have an account ? <Link to='/'><span>Sign Up</span></Link></p>
+            <p className='log-para2'>Don’t have an account ? <Link to='/'><span>Sign Up</span></Link></p>
           </div>
           </div>
         </Grid>

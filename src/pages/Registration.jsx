@@ -114,7 +114,7 @@ const Registration = () => {
               </div>
             </div>
             <CssButton onClick={handleSignUp} variant="contained">Sign Up</CssButton>
-            <p>Already  have an account ? <Link to='/login'><span>Sign In</span></Link></p>
+            <p className='para2'>Already  have an account ? <Link to='/login'><span>Sign In</span></Link></p>
           </div>
           </div>
         </Grid>

@@ -37,7 +37,7 @@
     padding-bottom: 39px;
 }
 
-.reg-content p:last-child{
+.para2{
     font-size: 13px;
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
@@ -46,7 +46,7 @@
     margin-left: 48px;
 }
 
-.reg-content p:last-child a{
+.reg-content a{
   text-decoration: none;
   color: #EA6C00;
 }
@@ -90,12 +90,12 @@
     border-radius: 9px;
 }
 .loginType p{
-    margin-left: 0px !important;
-    padding: 0px !important;
-    font-size: 21px !important;
-    color: #03014C !important;
-    font-family: "Open Sans", sans-serif !important;
-    font-weight: 600 !important;
+    margin-left: 0px;
+    padding: 0px;
+    font-size: 21px;
+    color: #03014C;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
 }
 .logEyeIcon{
     position: absolute;
@@ -105,4 +105,13 @@
 .logPasswordField{
     position: relative;
 }
+.log-para2{
+    font-size: 13px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    color: #03014C;
+    padding-top: 35px;
+    margin-left: 118px;
+}
+
 /*Login Page Design End*/
