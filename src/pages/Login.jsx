@@ -4,9 +4,11 @@ import LoginImage from '../assets/Login.png'
 import TextField from '@mui/material/TextField';
 import { alpha, styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import GoogleImg from '../assets/Google.png'
 import { LuEye, LuEyeClosed } from "react-icons/lu";
+import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { toast, ToastContainer } from 'react-toastify';
 
 const CssTextField = styled(TextField)({
   '& label.Mui-focused': {
@@ -35,11 +37,14 @@ const CssButton = styled(Button)({
     marginTop:"17px"
 });
 const Login = () => {
-  let [showPassword,setShowPassword]=useState(false)
-  let [email,setEmail]=useState("")
+    const auth = getAuth();
+    const provider = new GoogleAuthProvider();
+    let [showPassword,setShowPassword]=useState(false)
+    let [email,setEmail]=useState("")
     let [password,setPassword]=useState("")
     let [emailError,setEmailError]=useState("")
     let [passwordError,setPasswordError]=useState("")
+    let navigate = useNavigate()
   
     let handleEmail=(e)=>{
       setEmail(e.target.value)
@@ -69,8 +74,41 @@ const Login = () => {
         setPasswordError("Ensures at least one special character")
       }else if(!/([A-Za-z\d@$!%*?&]{8,}$)/.test(password)){
         setPasswordError("Ensures the password is at least 8 characters long")
-      } 
+      }
+      else{
+        signInWithEmailAndPassword(auth, email, password)
+        .then((user) => {
+          if(user.user.emailVerified){
+            toast.success("Login Successful!")
+            navigate('/home')
+          }else{
+            toast.error("Email is not varified!")
+          }
+          
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          console.log(errorCode);
+          if(errorCode.includes("auth/invalid-credential")){
+            toast.error("Email & Password incorrect!")
+          }
+          
+          
+        });
+      }
       
+    }
+    let handleGoogle=()=>{
+      
+      signInWithPopup(auth, provider)
+      .then((result) => {
+        navigate('/home')
+      }).catch((error) => {
+        const errorCode = error.code;
+        console.log(errorCode);
+        
+        
+      });
     }
 
   return (
@@ -80,6 +118,18 @@ const Login = () => {
             <div className='reg-content'>
             <h2>Login to your account!</h2>
             <p className='paragraph'>Free register and you can enjoy it</p>
+            <ToastContainer
+                position="top-left"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick={false}
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
             {
               emailError && <p className='errorMessage'>{emailError}</p>
             }
@@ -100,7 +150,7 @@ const Login = () => {
               </div>
             </div>
             <CssButton  onClick={handleSignIn} variant="contained">Login to Continue</CssButton>
-            <div className='loginType'>
+            <div onClick={handleGoogle} className='loginType'>
               <img src={GoogleImg} alt="" />
               <p>Login with Google</p>
             </div>

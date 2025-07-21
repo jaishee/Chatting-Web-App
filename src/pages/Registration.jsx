@@ -4,8 +4,12 @@ import RegistrationImage from '../assets/Registration.png'
 import TextField from '@mui/material/TextField';
 import { alpha, styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { LuEye, LuEyeClosed } from "react-icons/lu";
+import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
+import { ToastContainer, toast } from 'react-toastify';
+import { Oval } from 'react-loader-spinner';
+
 
 const CssTextField = styled(TextField)({
   '& label.Mui-focused': {
@@ -34,6 +38,8 @@ const CssButton = styled(Button)({
 });
 
 const Registration = () => {
+  const auth = getAuth();
+  let navigate = useNavigate()
   let [showPassword,setShowPassword]=useState(false)
   let [email,setEmail]=useState("")
   let [name,setName]=useState("")
@@ -41,6 +47,7 @@ const Registration = () => {
   let [emailError,setEmailError]=useState("")
   let [nameError,setNameError]=useState("")
   let [passwordError,setPasswordError]=useState("")
+  let [loader,setLoader]=useState(false)
 
   let handleEmail=(e)=>{
     setEmail(e.target.value)
@@ -79,7 +86,30 @@ const Registration = () => {
       setPasswordError("Ensures the password is at least 8 characters long")
     }
     
-    
+    else{
+      
+        setLoader(true)
+        createUserWithEmailAndPassword(auth, email, password)
+        .then((user) => {
+          sendEmailVerification(auth.currentUser)
+          .then(() => {
+          setEmail("")
+          setName("")
+          setPassword("")
+          toast.success("Registration Success!");
+          setLoader(false)
+          setTimeout(()=>{
+            navigate('/login')
+          },3000)
+        });
+      })
+      .catch((error) => {
+          const errorCode = error.code;
+          console.log(errorCode);
+          
+      });
+      
+    }
     
   }
   
@@ -90,19 +120,31 @@ const Registration = () => {
             <div className='reg-content'>
             <h2>Get started with easily register</h2>
             <p className='paragraph'>Free register and you can enjoy it</p>
+            <ToastContainer
+                position="top-left"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick={false}
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
             {
               emailError && <p className='errorMessage'>{emailError}</p>
             }
-            <CssTextField onChange={handleEmail} id="outlined-basic" label="Email Address" variant="outlined" />
+            <CssTextField value={email} onChange={handleEmail} id="outlined-basic" label="Email Address" variant="outlined" />
             {
               nameError && <p className='errorMessage'>{nameError}</p>
             }
-            <CssTextField onChange={handleName} id="outlined-basic" label="Full Name" variant="outlined" />
+            <CssTextField value={name} onChange={handleName} id="outlined-basic" label="Full Name" variant="outlined" />
             {
               passwordError && <p className='errorMessage'>{passwordError}</p>
             }
             <div className='regPasswordField'>
-              <CssTextField onChange={handlePassword} type={showPassword?"text":"password"}  id="outlined-basic" label="Password" variant="outlined" />
+              <CssTextField value={password} onChange={handlePassword} type={showPassword?"text":"password"}  id="outlined-basic" label="Password" variant="outlined" />
               <div onClick={()=>setShowPassword(!showPassword)} className='regEyeIcon'>
                 {
                   showPassword 
@@ -113,7 +155,24 @@ const Registration = () => {
                 }
               </div>
             </div>
-            <CssButton onClick={handleSignUp} variant="contained">Sign Up</CssButton>
+            {
+              loader 
+              ?
+              <CssButton onClick={handleSignUp} variant="contained">
+                  <Oval
+                      visible={true}
+                      height="40"
+                      width="40"
+                      color="#ffffff"
+                      ariaLabel="oval-loading"
+                      wrapperStyle={{}}
+                      wrapperClass=""
+                  />
+              </CssButton>
+              
+              :
+              <CssButton onClick={handleSignUp} variant="contained">Sign Up</CssButton>
+            }
             <p className='para2'>Already  have an account ? <Link to='/login'><span>Sign In</span></Link></p>
           </div>
           </div>
