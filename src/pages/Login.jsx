@@ -15,6 +15,8 @@ import {
   sendPasswordResetEmail
 } from "firebase/auth";
 import { toast, ToastContainer } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { userDetails } from "../slices/userInfoSlice";
 
 const CssTextField = styled(TextField)({
   "& label.Mui-focused": {
@@ -44,6 +46,7 @@ const CssButton = styled(Button)({
 const Login = () => {
   const auth = getAuth();
   const provider = new GoogleAuthProvider();
+  let dispatch = useDispatch()
   let [showPassword, setShowPassword] = useState(false);
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
@@ -86,6 +89,9 @@ const Login = () => {
       signInWithEmailAndPassword(auth, email, password)
         .then((user) => {
           if (user.user.emailVerified) {
+            dispatch(userDetails(user.user))
+            localStorage.setItem("userinfo",JSON.stringify(user.user))
+
             toast.success("Login Successful!");
             navigate("/home");
           } else {
@@ -171,7 +177,7 @@ const Login = () => {
               <CssButton onClick={handleForgetPasswordButton} variant="contained">Send Code</CssButton>
             </div>
           </div>
-      </div>
+        </div>
         :
         <Grid container>
         <Grid size={6}>
@@ -225,7 +231,7 @@ const Login = () => {
         <Grid size={6}>
           <img className="log-image" src={LoginImage} alt="" />
         </Grid>
-      </Grid>
+        </Grid>
       }
       
     </>
