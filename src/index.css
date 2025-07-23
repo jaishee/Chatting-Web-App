@@ -154,3 +154,71 @@
     margin-right: 305px;
 }
 /*Login Page Design End*/
+
+/*Side Bar Design Start*/
+.sideBar{
+    background: #0A6847;
+    width: 75%;
+    height: 91vh;
+    margin: 35px 32px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 38px;
+    box-sizing: border-box;
+    padding-bottom: 47px;
+}
+.profileImage{
+    width: 100px;
+    height: 100px;
+    background: #F3CA52;
+    border-radius: 100%;
+}
+.profileImage img{
+    width: 100%;
+}
+.elements{
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+    margin-top: 0px;
+}
+.commonIcon{
+    color: #F6E9B2;
+    font-size: 35px;
+}
+.active{
+    position: relative;
+    z-index: 2;
+}
+.active .commonIcon{
+    color: #0A6847;
+}
+.active::after{
+    background: #F6E9B2;
+    width: 161px;
+    height: 88px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    position: absolute;
+    top: -22px;
+    left: -35px;
+    content: "";
+    z-index: -1;
+}
+.active::before{
+    background: #0A6847;
+    width: 8px;
+    height: 89px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    position: absolute;
+    top: -22.5px;
+    left: 118px;
+    content: "";
+    z-index: 1;
+    box-shadow: -2px 0px 4px rgba(0, 0, 0, 0.25);
+}
+/*Side Bar Design End*/

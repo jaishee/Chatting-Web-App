@@ -9,10 +9,13 @@ export const userInfoSlice = createSlice({
     userDetails: (state,action) => {
         state.value = action.payload
     },
+    removeUserDetails: (state,action) => {
+        state.value = null
+    },
     
   },
 })
 
-export const { userDetails } = userInfoSlice.actions
+export const { userDetails, removeUserDetails } = userInfoSlice.actions
 
 export default userInfoSlice.reducer

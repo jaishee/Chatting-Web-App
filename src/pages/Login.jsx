@@ -93,7 +93,7 @@ const Login = () => {
             localStorage.setItem("userinfo",JSON.stringify(user.user))
 
             toast.success("Login Successful!");
-            navigate("/home");
+            navigate("/pages/home");
           } else {
             toast.error("Email is not varified!");
           }
@@ -112,7 +112,7 @@ const Login = () => {
   let handleGoogle = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
-        navigate("/home");
+        navigate("/pages/home");
       })
       .catch((error) => {
         const errorCode = error.code;
