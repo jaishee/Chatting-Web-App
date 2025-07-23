@@ -222,3 +222,56 @@
     box-shadow: -2px 0px 4px rgba(0, 0, 0, 0.25);
 }
 /*Side Bar Design End*/
+
+/*Home Page Design Start*/
+.homeLayout{
+    margin-top: 35px;
+    margin-right: 35px;
+}
+.userListBox{
+    width: 100%;
+    background: #bcbcc0;
+    height: 400px;
+}
+.searchBox{
+    position: relative;
+}
+.searchBox input{
+    width: 100%;
+    background: white;
+    border-radius: 20px;
+    border: 0;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 17px 70px;
+    box-sizing: border-box;
+}
+.searchBox .searchIcon{
+    width: 19px;
+    height: 19px;
+    position: absolute;
+    top: 50%;
+    left: 23px;
+    transform:translateY(-50%);
+
+}
+.searchBox .threeDotIcon{
+    position: absolute;
+    height: 20px;
+    top: 50%;
+    right: 17px;
+    transform:translateY(-50%);
+    color: #0A6847;
+}
+.userListProfileBox{
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    margin-top: 43px;
+}
+.userListProfileBox h3{
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+}
+/*Home Page Design Start*/
