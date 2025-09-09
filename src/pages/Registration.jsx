@@ -125,7 +125,7 @@ const Registration = () => {
       <Grid size={6}>
         <div className="reg-content-box">
           <div className="reg-content">
-            <h2>Get started with easily </h2>
+            <h2>Get started with easily register</h2>
             <p className="paragraph">Free register and you can enjoy it</p>
             <ToastContainer
               position="top-left"
