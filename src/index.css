@@ -1,3 +1,4 @@
+
 *{
     margin: 0;
     padding: 0;
@@ -455,6 +456,467 @@
     color:  #ffd000 !important;
     background: #ffffff !important;
 }
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*Registration Page Design End*/
+.reg-image{
+    width: 100%;
+    height: 100vh;
+    display: block;
+    object-fit: cover;
+    background-color: #7ABA78;
+}
+.reg-content-box{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 100%;
+}
+.reg-content{
+    padding-right: 30px;
+    width: 500px;
+
+}
+.reg-content h2{
+    font-size: 32px;
+    font-weight: 700;
+    color: #11175D;
+    font-family: "Nunito", sans-serif;
+}
+.paragraph{
+    font-size: 20px;
+    font-weight: 400;
+    color: #808080;
+    font-family: "Nunito", sans-serif;
+    padding-top: 13px;
+    padding-bottom: 39px;
+}
+
+.para2{
+    font-size: 13px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    color: #03014C;
+    padding-top: 35px;
+    margin-left: 48px;
+}
+
+.reg-content a{
+  text-decoration: none;
+  color: #EA6C00;
+}
+
+.regEyeIcon{
+    position: absolute;
+    top: 19px;
+    left: 270px;
+}
+.regPasswordField{
+    position: relative;
+}
+.errorMessage{
+    color: red;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: "Nunito", sans-serif;
+    padding-bottom: 5px;
+}
+
+/*Registration Page Design End*/
+
+/*Login Page Design Start*/
+
+.log-image{
+    width: 100%;
+    height: 100vh;
+    display: block;
+    object-fit: cover;
+    background-color: #7ABA78;
+}
+.loginType{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 422px;
+    height: 55px;
+    margin-top: 35px;
+    column-gap: 10px;
+    border: 1px solid #5F34F5;
+    border-radius: 9px;
+    cursor: pointer;
+}
+.loginType p{
+    margin-left: 0px;
+    padding: 0px;
+    font-size: 21px;
+    color: #03014C;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+}
+.logEyeIcon{
+    position: absolute;
+    top: 19px;
+    left: 390px;
+}
+.logPasswordField{
+    position: relative;
+}
+.log-para2{
+    font-size: 13px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    color: #03014C;
+    padding-top: 5px;
+    margin-left: 118px;
+}
+.log-para3{
+    font-size: 13px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    color: #03014C;
+    padding-top: 35px;
+    margin-left: 158px;
+    cursor: pointer;
+}
+.forgetPasswordUI{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background: rgb(0, 0, 0,.5);
+    justify-content: center;
+    align-items: center;
+}
+.forgetPasswordBox{
+    width: 600px;
+    border-radius: 20px;
+    padding: 100px 0px;
+    background: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;    
+}
+.buttonBox{
+    display: flex;
+    column-gap: 20px;
+    width: 422px;
+}
+.forgetPasswordUI .errorMessage{
+    margin-right: 305px;
+}
+/*Login Page Design End*/
+
+/*Side Bar Design Start*/
+.sideBar{
+    background: #0A6847;
+    width: 70%;
+    height: 90vh;
+    margin: 35px 32px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 38px;
+    box-sizing: border-box;
+    padding-bottom: 47px;
+}
+.profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.profileImage{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.userName{
+    color: #F6E9B2;
+    padding-top: 20px;
+    font-family: "Open Sans", sans-serif;
+}
+.profileImage .overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0,.4);
+    border-radius: 100%;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    transition: .3s;
+}
+.profileImage:hover .overlay{
+    opacity: 1;
+}
+.profileImage img{
+    width: 100%;
+    border-radius: 100%;
+}
+.popUpImg{
+    width: 100%;
+    height: 125vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    background-color: rgb(0, 0, 0,.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.popUpImgBox{
+    width: 600px;
+    padding: 10px;
+    background: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.popUpImgBox h1{
+    padding-top: 50px;
+    color: #03014C;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+}
+.popUpImgBox input{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #03014C;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: medium;
+    cursor: pointer;
+    margin-left: 100px;
+}
+.popUpButtonBox{
+    display: flex;
+    column-gap: 20px;
+    padding-bottom: 50px;
+    
+}
+.elements{
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+    margin-top: 0px;
+}
+.commonIcon{
+    color: #F6E9B2;
+    font-size: 35px;
+}
+.active{
+    position: relative;
+    z-index: 2;
+}
+.active .commonIcon{
+    color: #0A6847;
+}
+.active::after{
+    background: #F6E9B2;
+    width: 147px;
+    height: 88px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    position: absolute;
+    top: -22px;
+    left: -35px;
+    content: "";
+    z-index: -1;
+}
+.active::before{
+    background: #0A6847;
+    width: 8px;
+    height: 89px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    position: absolute;
+    top: -22.5px;
+    left: 104px;
+    content: "";
+    z-index: 1;
+    box-shadow: -2px 0px 4px rgba(0, 0, 0, 0.25);
+}
+.preview-box{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 20px 0;
+}
+.preview-round{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+/*Side Bar Design End*/
+
+/*Home Page Design Start*/
+.homeLayout{
+    margin-top: 35px;
+    margin-right: 35px;
+    height: 91vh;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 100px;
+}
+.userListBox{
+    width: 100%;
+    height: 250px;
+}
+.searchBox{
+    position: relative;
+}
+.searchBox input{
+    width: 100%;
+    background: white;
+    border-radius: 20px;
+    border: 0;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 17px 70px;
+    box-sizing: border-box;
+}
+.searchBox .searchIcon{
+    width: 19px;
+    height: 19px;
+    position: absolute;
+    top: 50%;
+    left: 23px;
+    transform:translateY(-50%);
+
+}
+.searchBox .threeDotIcon{
+    position: absolute;
+    height: 20px;
+    top: 50%;
+    right: 17px;
+    transform:translateY(-50%);
+    color: #0A6847;
+}
+.userListProfileBox{
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-top: 15px;
+    overflow-y: scroll;
+    height: 100%;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+}
+
+.userListProfileBox .profileTitleBox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 22px 0px 28px;
+}
+.profileTitleBox h3{
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: black;
+}
+.profileTitleBox .threeDotIcon{
+    height: 20px;
+    color: #0A6847;
+}
+.userProfileBody{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding-top: 18px;
+}
+.userProfileBody::after{
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.25);
+    bottom: 0;
+    left: 25px;
+    content: "";
+}
+.otherProfileImage{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    padding-bottom: 14px;
+}
+.otherProfileImage img{
+    width: 100%;
+    height: 100%;
+}
+.userProfileInfo h4{
+    font-family: "Poppins",sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    padding-left: 14px;
+    color: black;
+    padding-top: 12px;
+}
+.userProfileInfo p{
+    font-family: "Poppins",sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    padding-left: 14px;
+    padding-bottom: 20px;
+    color: rgba(77, 77, 77, 0.75);
+}
+.userProfileBody button{
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    height: 30px;
+    margin-right: 30px;
+    margin-top: 15px;
+    border-radius: 5px;
+    border: none;
+    background: #0A6847;
+    color: #ffffff;
+    cursor: pointer;
+    transition: .3s;
+    border: transparent solid 1px;
+    padding: 0px 10px;
+}
+.userProfileBody button:hover{
+    background: #ffffff;
+    color: #0A6847;
+    border: #0A6847 solid 1px;
+}
+.profileBodyBox{
+    display: flex;
+    padding: 0 39px 0 20px;
+}
+.clickPendingButton{
+    background: #ffd000 !important;
+}
+.clickPendingButton:hover{
+    border: #ffd000 1px solid !important;
+    color:  #ffd000 !important;
+    background: #ffffff !important;
+}
+
 
 
 /*Home Page Design End*/
