@@ -10,6 +10,7 @@ const FriendList = () => {
   const db = getDatabase();
   let [friend, setFriend] = useState([]);
   let data = useSelector((state) => (state.activeUser.value));
+  let unknown
 
 
   useEffect(() => {
