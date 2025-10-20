@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Group1 from "../assets/group1.png";
 import { BsThreeDotsVertical } from 'react-icons/bs'
 import { IoSearchOutline } from 'react-icons/io5'
-import { getDatabase, ref, onValue, set, push } from "firebase/database";
+import { getDatabase, ref, onValue, set, push, remove } from "firebase/database";
 import { useSelector } from 'react-redux';
 
 const FriendList = () => {
@@ -12,6 +12,30 @@ const FriendList = () => {
   let data = useSelector((state) => (state.activeUser.value));
 
 
+  let handleBlock=(item)=>{
+    console.log(item);
+    if(data.uid==item.receiverID){
+      set(push(ref(db, "blocklist/" + item.key)), {
+          block: item.senderName,
+          blockID: item.senderID,
+          blockBy: item.receiverName,
+          blockByID: item.receiverID
+        }).then(()=>{
+          remove(ref(db, "friend/"))
+        })
+    }else{
+      set(push(ref(db, "blocklist/")), {
+          block: item.receiverName,
+          blockID: item.receiverID,
+          blockBy: item.senderName,
+          blockByID: item.senderID
+        }).then(()=>{
+          remove(ref(db, "friend/"))
+        })
+    }
+    
+  }
+
   useEffect(() => {
       const friendRef = ref(db, "friend/");
       let arr = [];
@@ -19,7 +43,7 @@ const FriendList = () => {
       onValue(friendRef, (snapshot) => {
         snapshot.forEach((item) => {
             if(data.uid == item.val().receiverID || data.uid == item.val().senderID){
-              arr.push(item.val());
+              arr.push({...item.val(),key:item.key});
             }
         });
 
@@ -51,7 +75,7 @@ const FriendList = () => {
                               
                           </div>
                       </div>
-                      <button className="">Block</button>
+                      <button onClick={()=>handleBlock(item)} className="">Block</button>
                   </div>
               ))
             }

@@ -53,7 +53,7 @@ const UserList = () => {
     
         onValue(friendRef, (snapshot) => {
           snapshot.forEach((item) => {
-            if(item.val().receiverID==data.uid){
+            if(item.val().receiverID === data.uid || item.val().senderID === data.uid){
               arr.push(item.val().receiverID + item.val().senderID);
             }
           });

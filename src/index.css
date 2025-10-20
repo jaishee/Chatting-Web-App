@@ -904,6 +904,16 @@
     color: #0A6847;
     border: #0A6847 solid 1px;
 }
+.friendP {
+    padding-right: 50px;
+    padding-top: 13px;
+    color: #0A6847;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    height: 30px;
+
+}
 .profileBodyBox{
     display: flex;
     padding: 0 39px 0 20px;
