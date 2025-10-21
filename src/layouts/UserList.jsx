@@ -9,6 +9,7 @@ const UserList = () => {
   let [userList, setUserList] = useState([]);
   let [concateFriendRequest, setConcetFriendRequest] = useState([]);
   let [concateFriend, setConcetFriend] = useState([]);
+  let [concateBlock, setConcetBlock] = useState([]);
   let data = useSelector((state) => state.activeUser.value);
 
   let handleFriendRequest = (item) => {
@@ -62,6 +63,20 @@ const UserList = () => {
         });
     }, []);
   
+  useEffect(() => {
+        const blockRef = ref(db, "blocklist/");
+        let arr = [];
+    
+        onValue(blockRef, (snapshot) => {
+          snapshot.forEach((item) => {
+            if(data.uid === item.val().receiverID || data.uid === item.val().senderID){
+              arr.push(item.val().receiverID + item.val().senderID);
+            }
+          });
+  
+          setConcetBlock(arr);
+        });
+    }, []);
 
   return (
     <div className="userListBox">
@@ -95,12 +110,8 @@ const UserList = () => {
               concateFriendRequest.includes(data.uid + item.id) ? 
               <button onClick={() => handleFriendRequest(item)} className="clickPendingButton">Pending</button>
               : 
-              <button
-                onClick={() => handleFriendRequest(item)}
-                className="clickAddButton"
-              >
-                Add
-              </button>
+              <button onClick={() => handleFriendRequest(item)} className="clickAddButton">Add</button>
+              
             }
           </div>
         ))}

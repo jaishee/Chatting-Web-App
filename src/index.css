@@ -912,7 +912,15 @@
     font-weight: 600;
     font-size: 18px;
     height: 30px;
-
+}
+.friendB {
+    padding-right: 15px;
+    padding-top: 20px;
+    color: #c71818;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    height: 30px;
 }
 .profileBodyBox{
     display: flex;
