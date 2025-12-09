@@ -62,9 +62,10 @@ const UserList = () => { const db = getDatabase();
     let arr = []; onValue(blockRef, (snapshot) => { 
       snapshot.forEach((item) => { 
         console.log(item)
-        arr.push(item.val().senderID + item.val().receiverID); 
+        arr.push(item.val().blockID + item.val().blockByID); 
       }); 
       setConcetBlock(arr);
+      console.log(arr)
       
     }); }, []); 
 
@@ -93,7 +94,7 @@ const UserList = () => { const db = getDatabase();
                     <h4>{item.username}</h4> 
                   </div>
                 </div> 
-                { 
+                {
                   concateBlock.includes(item.id + data.uid) || 
                   concateBlock.includes(data.uid + item.id) 
                   ? 
@@ -111,6 +112,7 @@ const UserList = () => { const db = getDatabase();
                   : 
                   <button onClick={() => handleFriendRequest(item)} className="clickAddButton">Add</button> 
                 } 
+                
               </div> 
               ))
           } 

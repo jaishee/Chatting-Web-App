@@ -30,6 +30,7 @@ const FriendRequestList = () => {
         }
       });
       setFriendRequest(arr);
+      console.log(arr)
     });
   }, []);
 

@@ -99,9 +99,10 @@ const SideBar = () => {
   };
 
   let handlePopUpImg = (e) => {
-    if (!popUpref.current.contains(e.target)) {
-      setVisiblePopUp(false);
-    }
+    if (popUpref.current && !popUpref.current.contains(e.target)) {
+  setVisiblePopUp(false);
+}
+
   };
 
   let handleLogout = () => {
@@ -121,7 +122,7 @@ const SideBar = () => {
 
   useEffect(() => {
     setActiveValue(location.pathname.replace("/pages/", ""));
-  },[])
+  },[location.pathname])
 
 
   return (

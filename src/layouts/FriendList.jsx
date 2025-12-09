@@ -12,41 +12,29 @@ const FriendList = () => {
   let data = useSelector((state) => (state.activeUser.value));
 
 
-  let handleBlock=(item)=>{
-    console.log(item);
-    if(data.uid==item.receiverID){
-      set(push(ref(db, "blocklist/" + item.key)), {
-          block: item.senderName,
-          blockID: item.senderID,
-          blockBy: item.receiverName,
-          blockByID: item.receiverID
-        }).then(()=>{
-          remove(ref(db, "friend/"))
-        })
-    }else{
-      set(push(ref(db, "blocklist/")), {
-          block: item.receiverName,
-          blockID: item.receiverID,
-          blockBy: item.senderName,
-          blockByID: item.senderID
-        }).then(()=>{
-          remove(ref(db, "friend/"))
-        })
-    }
-    
-  }
+  const handleBlock = (item) => {
+  let blockedName = data.uid === item.receiverID ? item.senderName : item.receiverName;
+  let blockedID = data.uid === item.receiverID ? item.senderID : item.receiverID;
+
+  set(push(ref(db, "blocklist/")), {
+    block: blockedName,
+    blockID: blockedID,
+    blockBy: data.displayName,
+    blockByID: data.uid,
+  }).then(() => {
+    remove(ref(db, "friend/" + item.key));
+  });
+};
 
   useEffect(() => {
       const friendRef = ref(db, "friend/");
       let arr = [];
-  
       onValue(friendRef, (snapshot) => {
         snapshot.forEach((item) => {
             if(data.uid == item.val().receiverID || data.uid == item.val().senderID){
               arr.push({...item.val(),key:item.key});
             }
         });
-
         setFriend(arr);
       });
   }, []);
