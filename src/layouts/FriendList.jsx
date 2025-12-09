@@ -13,18 +13,18 @@ const FriendList = () => {
 
 
   const handleBlock = (item) => {
-  let blockedName = data.uid === item.receiverID ? item.senderName : item.receiverName;
-  let blockedID = data.uid === item.receiverID ? item.senderID : item.receiverID;
+    let blockedName = data.uid === item.receiverID ? item.senderName : item.receiverName;
+    let blockedID = data.uid === item.receiverID ? item.senderID : item.receiverID;
 
-  set(push(ref(db, "blocklist/")), {
-    block: blockedName,
-    blockID: blockedID,
-    blockBy: data.displayName,
-    blockByID: data.uid,
-  }).then(() => {
-    remove(ref(db, "friend/" + item.key));
-  });
-};
+    set(push(ref(db, "blocklist/")), {
+      block: blockedName,
+      blockID: blockedID,
+      blockBy: data.displayName,
+      blockByID: data.uid,
+    }).then(() => {
+      remove(ref(db, "friend/" + item.key));
+    });
+  };
 
   useEffect(() => {
       const friendRef = ref(db, "friend/");

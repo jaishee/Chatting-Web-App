@@ -1,5 +1,4 @@
 import React, { createRef, useEffect, useRef, useState } from "react";
-import Profile from "../assets/Profile.png";
 import { IoHomeOutline, IoSettingsOutline } from "react-icons/io5";
 import { LuMessageCircleMore } from "react-icons/lu";
 import { IoMdNotificationsOutline } from "react-icons/io";
@@ -100,8 +99,8 @@ const SideBar = () => {
 
   let handlePopUpImg = (e) => {
     if (popUpref.current && !popUpref.current.contains(e.target)) {
-  setVisiblePopUp(false);
-}
+      setVisiblePopUp(false);
+    }
 
   };
 

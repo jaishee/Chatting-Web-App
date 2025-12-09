@@ -63,7 +63,7 @@ const UserList = () => { const db = getDatabase();
       snapshot.forEach((item) => { 
         console.log(item)
         arr.push(item.val().blockID + item.val().blockByID); 
-      }); 
+      }) 
       setConcetBlock(arr);
       console.log(arr)
       
